@@ -3,6 +3,7 @@ import './App.css';
 import HomePage from './pages/hompage/homepage.component';
 import ShopPage from './pages/shop/shop.component'
 import {Switch, Route} from 'react-router-dom';
+import Header from './components/header/header.component';
 const Hats = (props) => {
   return (
   <div>
@@ -46,6 +47,8 @@ const Men = (props) => {
 
 export default function App() {
   return (
+    <div>
+      <Header/>
       <Switch>
         <Route exact path='/' component={HomePage}/>
         <Route exact path='/shop' component={ShopPage}/>
@@ -55,5 +58,6 @@ export default function App() {
         <Route exact path='/shop/womens' component={Women}/>
         <Route exact path='/shop/mens' component={Men}/>
       </Switch>
+    </div>
   );
 }
