@@ -11,7 +11,7 @@ import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 const Header = ({currentUser, hidden}) =>(
-    <div className='header'>
+    <section className='header'>
         <Link className='logo-container' to='/'>
             <Logo className='logo'/>
         </Link>
@@ -35,7 +35,7 @@ const Header = ({currentUser, hidden}) =>(
         {
             hidden ? null : (<CartDropdown/>)
         }
-    </div>
+    </section>
 )
 // const mapStateToProps = state =>({
 //     currentUser : selectCurrentUser(state),

@@ -11,46 +11,7 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
-const Hats = (props) => {
-  return (
-  <div>
-    <h1>Hats</h1>
-    <button onClick={()=> props.history.push('/')}>to homepage</button>
-  </div>
-  );
-}
-const Jackets = (props) => {
-  return (
-  <div>
-    <h1>Jackets</h1>
-    <button onClick={()=> props.history.push('/')}>to homepage</button>
-  </div>
-  );
-}
-const Sneakers = (props) => {
-  return (
-  <div>
-    <h1>Sneakers</h1>
-    <button onClick={()=> props.history.push('/')}>to homepage</button>
-  </div>
-  );
-}
-const Women = (props) => {
-  return (
-  <div>
-    <h1>Women</h1>
-    <button onClick={()=> props.history.push('/')}>to homepage</button>
-  </div>
-  );
-}
-const Men = (props) => {
-  return (
-  <div>
-    <h1>Men</h1>
-    <button onClick={()=> props.history.push('/')}>to homepage</button>
-  </div>
-  );
-}
+
 class App extends React.Component{
   unSubscribeFromAuth = null;
   componentDidMount(){
@@ -89,15 +50,9 @@ class App extends React.Component{
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage}/>
-          <Route exact path='/shop' component={ShopPage}/>
+          <Route path='/shop' component={ShopPage}/>
           <Route exact path='/signin' render={ ()=> this.props.currentUser ? (<Redirect to ='/'/>) : (<SignInAndSignUpPage/>)}/>
-          <Route exact path='/shop/hats' component={Hats}/>
-          <Route exact path='/shop/jackets' component={Jackets}/>
-          <Route exact path='/shop/sneakers' component={Sneakers}/>
-          <Route exact path='/shop/womens' component={Women}/>
-          <Route exact path='/shop/mens' component={Men}/>
           <Route exact path='/checkout' component={CheckoutPage}/>
-
         </Switch>
       </div>
     );
